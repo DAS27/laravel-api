@@ -1,15 +1,13 @@
 start:
-	php artisan serve --host 0.0.0.0
+	./vendor/bin/sail up -d
 
-setup:
+setup: install migrate
+
+migrate:
+	./vendor/bin/sail artisan migrate
+
+install:
 	composer install
 	cp -n .env.example .env|| true
 	php artisan key:gen --ansi
-	migrate
-
-migrate:
-	php artisan migrate
-	php artisan db:seed
-
-log:
-	tail -f storage/logs/laravel.log
+	php artisan sail:install
