@@ -42,5 +42,7 @@ curl -X POST localhost/api/v1/documents/{id}/publish | json_pp
 
 Update draft
 ````
-curl -X POST localhost/api/v1/documents/{id} | json_pp
+curl -X POST localhost/api/v1/documents/{id}'
+--form '_method="PATCH"' \
+--form 'payload="{json_object}"' | json_pp
 ````
