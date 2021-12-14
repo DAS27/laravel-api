@@ -19,6 +19,11 @@ Server will be available at http://localhost
 $ make start
 ````
 
+## Run tests
+````
+$ make test
+````
+
 ## Usage
 Get all documents
 ````

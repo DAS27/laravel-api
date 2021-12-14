@@ -11,3 +11,6 @@ install:
 	cp -n .env.example .env|| true
 	php artisan key:gen --ansi
 	php artisan sail:install
+
+test:
+    ./vendor/bin/sail test
